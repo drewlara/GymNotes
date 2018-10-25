@@ -1,0 +1,38 @@
+.side-bar {
+  height: 100%;
+  background: rgb(51, 51, 51);
+  color: white;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 400px;
+  z-index: 200;
+  transform: translateX(200%);
+  transition: all 0.4s ease-out;
+  text-align: center;
+}
+
+.side-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.side-bar a:visited {
+  color: white;
+}
+
+.side-bar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-bar li {
+  margin-bottom: 20px;
+}
+
+.side-bar.open {
+  transform: translateX(0);
+}

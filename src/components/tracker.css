@@ -1,0 +1,23 @@
+.tracker h1 {
+  text-align: center;
+}
+
+.tracker-select {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.filters {
+  text-align: center;
+}
+
+.filter-button {
+  display: inline-block;
+  width: 60%;
+  background-color: rgb(51, 51 ,51);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}

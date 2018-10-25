@@ -1,0 +1,62 @@
+.workouts-title {
+  text-align: center;
+}
+
+.add-workout {
+  text-decoration: none;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  padding: 10px 40px 10px 40px;
+  border-radius: 4px;
+}
+
+.add-workout:visited {
+  color: white;
+}
+
+.add-workout-wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.workout-list {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.workout-list h2 {
+  font-size: 1.05em;
+  margin-bottom: 0;
+}
+
+.workout-list hr {
+  margin-top: 5px;
+}
+
+.workout-list ul {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0px;
+}
+
+.workout-list-options {
+  float: right;
+}
+
+.workout-list-options a {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+}
+
+.workout-list-options a:visited {
+  color: rgb(51, 51, 51);
+}
+
+.workout-view {
+  color: rgb(48, 134, 174);
+  text-decoration: none;
+}
+
+.workout-view:visited {
+  color: rgb(48, 134, 174);
+}

@@ -1,0 +1,146 @@
+import React from 'react';
+import { connect } from 'react-redux'
+import Chart from 'react-apexcharts';
+import moment from 'moment';
+
+export class BreakdownChart extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      title: '',
+      workoutTypes: [],
+      workoutLabels: []
+    }
+    this.toCurrent = this.toCurrent.bind(this);
+  }
+
+  toCurrent(){
+    let currentWeek = this.props.workouts.filter(workout => {
+      return workout.date >= moment().startOf('isoWeek').valueOf() && workout.date <= moment().endOf('isoWeek').valueOf()
+    });
+
+    let workoutTypes = {};
+    currentWeek.forEach(workout => {
+      if (!workoutTypes[workout.type]){
+        workoutTypes[workout.type] = 1
+      } else {
+        workoutTypes[workout.type] += 1
+      }
+    });
+
+    let types = [];
+    let labels = [];
+
+
+    Object.keys(workoutTypes).sort().forEach(key => {
+      labels.push(key);
+      types.push(workoutTypes[key]);
+    });
+
+    this.setState({
+      title: 'Current Week',
+      workoutTypes: [...types],
+      workoutLabels: [...labels]
+    })
+  }
+
+  toLastSeven(){
+    let lastSeven = this.props.workouts.filter(workout => {
+      return workout.date >= moment().subtract(7, 'days').valueOf() && workout.date <= moment().valueOf();
+    });
+
+    let workoutTypes = {};
+    lastSeven.forEach(workout => {
+      if (!workoutTypes[workout.type]){
+        workoutTypes[workout.type] = 1
+      } else {
+        workoutTypes[workout.type] += 1
+      }
+    });
+
+    let types = [];
+    let labels = [];
+
+
+    Object.keys(workoutTypes).sort().forEach(key => {
+      labels.push(key);
+      types.push(workoutTypes[key]);
+    });
+
+    this.setState({
+      title: 'Current Week',
+      workoutTypes: [...types],
+      workoutLabels: [...labels]
+    })
+
+  }
+
+  toLastThirty(){
+    let lastThirty = this.props.workouts.filter(workout => {
+      return workout.date >= moment().subtract(30, 'days').valueOf() && workout.date <= moment().valueOf()
+    });
+
+    let workoutTypes = {};
+    lastThirty.forEach(workout => {
+      if (!workoutTypes[workout.type]){
+        workoutTypes[workout.type] = 1
+      } else {
+        workoutTypes[workout.type] += 1
+      }
+    });
+
+    let types = [];
+    let labels = [];
+
+
+    Object.keys(workoutTypes).sort().forEach(key => {
+      labels.push(key);
+      types.push(workoutTypes[key]);
+    });
+
+    this.setState({
+      title: 'Current Week',
+      workoutTypes: [...types],
+      workoutLabels: [...labels]
+    })
+  }
+
+  componentWillMount(){
+    this.toCurrent();
+  }
+
+
+  render() {
+    let chartData = {
+      options: {
+        labels: this.state.workoutLabels,
+        legend: {
+          position: 'bottom'
+        }
+      },
+      series: this.state.workoutTypes
+    }
+
+    let breakdownOptions = <div className="breakdown-options"><span onClick={() => this.toCurrent()}>Current Week</span> <span onClick={() => this.toLastSeven()}>Last 7 Days</span> <span onClick={() => this.toLastThirty()}>Last 30 Days</span></div>;
+    
+    return (
+      <div className="chart-wrapper">
+        <Chart
+        options={chartData.options}
+        series={chartData.series}
+        labels={chartData.labels}
+        type="donut"
+        width="350"
+        height="350"
+      />
+      {breakdownOptions}
+      </div>
+    )
+    }
+}
+
+const mapStateToProps = state => ({
+  workouts: state.app.workouts
+});
+
+export default connect(mapStateToProps)(BreakdownChart);

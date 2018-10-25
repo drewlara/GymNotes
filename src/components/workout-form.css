@@ -1,0 +1,98 @@
+.workout-form {
+  padding: 0 20px 0 20px;
+}
+
+.workout-form-title {
+  text-align: center;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.workout-number-input {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.workout-number-input input {
+  height: 30px;
+  font-size: 1em;
+  color: #555;
+  padding: 0 .857em;
+  text-align: center;
+  border-radius: 0px;
+  border: none;
+}
+
+.workout-number-input input:focus {
+  outline: rgb(0, 103, 244) auto 2px;
+}
+
+.workout-number-input button:focus {
+  outline: none;
+}
+
+.decrease {
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 1em;
+  color: #555;
+}
+
+.increase {
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-size: 1em;
+  color: #555;
+}
+
+.comments {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 5em;
+}
+
+.new-workout-button {
+  width: 100%;
+  background-color: rgb(51, 51 ,51);
+  color: white;
+  border-radius: 4px;
+  height: 35px;
+  font-size: 1em;
+}
+
+.back-link-wrapper {
+  text-align: center;
+  font-size: .95em;
+  color: rgb(51, 51, 51);
+}
+
+.back-link-wrapper a:visited {
+  color: rgb(51, 51 ,51);
+}
+
+.back-link-wrapper span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.form-error {
+  margin-top: 10px;
+  color: #721c24;
+}

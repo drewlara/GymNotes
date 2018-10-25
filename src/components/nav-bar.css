@@ -1,0 +1,30 @@
+.nav-bar {
+  display: grid;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  align-items: center;
+  padding: 10px;
+  grid-auto-columns: 10px;
+  height: 40px;
+}
+
+.nav-title h1 {
+  margin: 0;
+  font-size: 1.5em;
+  display: inline;
+}
+
+.nav-bar a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.nav-bar a:visited {
+  color: white;
+}
+
+.nav-links {
+  text-align: right;
+}
