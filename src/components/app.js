@@ -13,7 +13,9 @@ import LoginPage from './login';
 import Logout from './logout';
 import Sidebar from './sidebar';
 import Backdrop from './backdrop';
-import {refreshAuthToken} from '../actions/auth';
+import Spinner from './spinner';
+import { refreshAuthToken } from '../actions/auth';
+import { workoutGet } from '../actions/workouts';
 import { connect } from 'react-redux';
 
 export class App extends React.Component {
@@ -25,10 +27,13 @@ export class App extends React.Component {
     this.siderbarClickHandler = this.siderbarClickHandler.bind(this);
     this.backdropClickHandler = this.backdropClickHandler.bind(this);
   }
+
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
         // When we are logged in, refresh the auth token periodically
         this.startPeriodicRefresh();
+        //Fetch data
+        this.props.dispatch(workoutGet());
     } else if (prevProps.loggedIn && !this.props.loggedIn) {
         // Stop refreshing when we log out
         this.stopPeriodicRefresh();
@@ -68,9 +73,14 @@ export class App extends React.Component {
 
   render() {
     let backdrop;
+    let spinner;
 
     if (this.state.sideBarOpen) {
       backdrop = <Backdrop show={this.backdropClickHandler} />
+    }
+    
+    if (this.props.loading) {
+      spinner = <Spinner />
     }
 
     return (
@@ -79,6 +89,7 @@ export class App extends React.Component {
           <NavBar sidebarHandler={this.siderbarClickHandler} />
           <Sidebar open={this.state.sideBarOpen} />
           {backdrop}
+          {spinner}
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/login" component={LoginPage} />
@@ -99,7 +110,8 @@ export class App extends React.Component {
 
 const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  loading: state.app.loading
 });
 
 export default connect(mapStateToProps)(App);

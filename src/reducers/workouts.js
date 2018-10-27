@@ -1,35 +1,9 @@
-import { ADD_WORKOUT, EDIT_WORKOUT, DELETE_WORKOUT } from '../actions/workouts';
-/*import uuid from 'uuid';
-
-var start = new Date('20 Sep 2018').getTime();
-
-function seedWorkouts() {
-  const types = ['Arms', 'Shoulders', 'Back', 'Chest', 'Legs'];
-  const names = ['aaaaaaa', 'bbbbbbbb', 'ccccc'];
-  let id = uuid();
-  const newWorkout = {
-    type: types[Math.floor(Math.random() * 5)],
-    weight: Math.floor(Math.random() * 101) + 40,
-    reps: Math.floor(Math.random() * 21) + 5,
-    name: names[Math.floor(Math.random() * 3)],
-    comments: 'seeded workouts',
-    date: start,
-    id
-  }
-  return newWorkout
-}
-
-function generateWorkoutData(){
-  const workouts = []
-  for (let i = 0; i < 74; i++){
-    workouts.push(seedWorkouts());
-    start += (86400000 - 2)/2
-  }
-  return workouts;
-}*/
+import { ADD_WORKOUT, EDIT_WORKOUT, DELETE_WORKOUT, WORKOUT_API_REQUEST, WORKOUT_API_SUCCESS, WORKOUT_API_ERROR, CLEAR_WORKOUTS } from '../actions/workouts';
 
 const initialState = {
-  workouts: []
+  workouts: [],
+  loading: false,
+  error: null
 }
 
 export default (state=initialState, action) => {
@@ -46,6 +20,28 @@ export default (state=initialState, action) => {
   else if (action.type === DELETE_WORKOUT){
     const newState = {workouts: state.workouts.filter(workout => workout.id !== action.workout.id)}
     return Object.assign({}, state, newState);
+  }
+  else if (action.type === WORKOUT_API_REQUEST){
+    return Object.assign({}, state, {
+      loading: true,
+      error: null
+    });
+  }
+  else if (action.type === WORKOUT_API_SUCCESS){
+    return Object.assign({}, state, {
+      loading: false,
+      error: null
+    });
+  }
+  else if (action.type === WORKOUT_API_ERROR){
+    console.log(action.error);
+    return Object.assign({}, state, {
+      loading: false,
+      error: action.error
+    });
+  }
+  else if (action.type === CLEAR_WORKOUTS){
+    return Object.assign({}, state, initialState);
   }
   return state;
 }

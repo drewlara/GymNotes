@@ -16,7 +16,7 @@ export class BreakdownChart extends React.Component {
 
   toCurrent(){
     let currentWeek = this.props.workouts.filter(workout => {
-      return workout.date >= moment().startOf('isoWeek').valueOf() && workout.date <= moment().endOf('isoWeek').valueOf()
+      return moment(workout.date).valueOf() >= moment().startOf('isoWeek').valueOf() && moment(workout.date).valueOf() <= moment().endOf('isoWeek').valueOf()
     });
 
     let workoutTypes = {};
@@ -46,7 +46,7 @@ export class BreakdownChart extends React.Component {
 
   toLastSeven(){
     let lastSeven = this.props.workouts.filter(workout => {
-      return workout.date >= moment().subtract(7, 'days').valueOf() && workout.date <= moment().valueOf();
+      return moment(workout.date).valueOf() >= moment().subtract(7, 'days').valueOf() && moment(workout.date).valueOf() <= moment().valueOf();
     });
 
     let workoutTypes = {};
@@ -68,7 +68,7 @@ export class BreakdownChart extends React.Component {
     });
 
     this.setState({
-      title: 'Current Week',
+      title: 'Last 7 Days',
       workoutTypes: [...types],
       workoutLabels: [...labels]
     })
@@ -77,7 +77,7 @@ export class BreakdownChart extends React.Component {
 
   toLastThirty(){
     let lastThirty = this.props.workouts.filter(workout => {
-      return workout.date >= moment().subtract(30, 'days').valueOf() && workout.date <= moment().valueOf()
+      return moment(workout.date).valueOf() >= moment().subtract(30, 'days').valueOf() && moment(workout.date).valueOf() <= moment().valueOf()
     });
 
     let workoutTypes = {};
@@ -99,7 +99,7 @@ export class BreakdownChart extends React.Component {
     });
 
     this.setState({
-      title: 'Current Week',
+      title: 'Last 30 Days',
       workoutTypes: [...types],
       workoutLabels: [...labels]
     })
@@ -107,6 +107,12 @@ export class BreakdownChart extends React.Component {
 
   componentWillMount(){
     this.toCurrent();
+  }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.workouts !== this.props.workouts){
+      this.toCurrent();
+    }
   }
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field, reset } from 'redux-form';
-import { editWorkout } from '../actions/workouts'
+import { workoutPut } from '../actions/workouts'
 import NumberInput from './workout-number-input';
 import NameInput from './workout-name-input';
 import TypeSelect from './workout-type-select';
@@ -12,7 +12,8 @@ import {required, nonEmpty, isTrimmed, nonZero, nonNegative, maxVal} from '../va
 export class WorkoutEditForm extends React.Component {
   onSubmit(values){
     values.id = this.props.match.params.id;
-    this.props.dispatch(editWorkout(values))
+    //this.props.dispatch(editWorkout(values))
+    this.props.dispatch(workoutPut(values));
     this.props.dispatch(reset('edit-workout-form'));
     this.props.history.goBack();
   }

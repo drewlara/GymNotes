@@ -2,24 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { reduxForm, Field, reset } from 'redux-form';
-import { addWorkout } from '../actions/workouts';
+import { workoutPost } from '../actions/workouts';
 import DatePicker from './date-picker';
 import NameInput from './workout-name-input';
 import TypeSelect from './workout-type-select';
 import NumberInput from './workout-number-input';
 import {required, nonEmpty, isTrimmed, nonZero, nonNegative, maxVal} from '../validators';
-import uuid from 'uuid'
 import requiresLogin from './requires-login';
 import './workout-form.css'
 
 class WorkoutForm extends React.Component {
   onSubmit(values){
-    let id = uuid();
-    values.id = id;
-    this.props.dispatch(addWorkout(values));
+    this.props.dispatch(workoutPost(values));
     this.props.dispatch(reset('add-workout-form'));
     this.props.history.push('/workouts');
-    console.log(values);
   }
 
   render() {

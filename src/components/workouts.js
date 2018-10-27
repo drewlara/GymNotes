@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { deleteWorkout } from '../actions/workouts';
+import { workoutDelete } from '../actions/workouts';
 import requiresLogin from './requires-login';
 import './workouts.css'
 import moment from 'moment';
@@ -24,7 +24,7 @@ export function Workouts(props){
       <hr></hr>
       <ul key={date}>
         {
-          workouts[date].map((workout, index) => (<li key={index}><Link className="workout-view" to={`/workouts/${workout.id}`}>{`${workout.name}`}</Link> {`${workout.weight}`} <span className="workout-sub">lbs</span> {`${workout.reps}`} <span className="workout-sub">reps</span> <span className="workout-list-options"><Link to={`/workouts/${workout.id}/edit`}><i className="far fa-edit"></i></Link> <span onClick={() => props.dispatch(deleteWorkout(workout))}><i className="far fa-trash-alt"></i></span></span> </li>))
+          workouts[date].map((workout, index) => (<li key={index}><Link className="workout-view" to={`/workouts/${workout.id}`}>{`${workout.name}`}</Link> {`${workout.weight}`} <span className="workout-sub">lbs</span> {`${workout.reps}`} <span className="workout-sub">reps</span> <span className="workout-list-options"><Link to={`/workouts/${workout.id}/edit`}><i className="far fa-edit"></i></Link> <span onClick={() => props.dispatch(workoutDelete(workout))}><i className="far fa-trash-alt"></i></span></span> </li>))
         }
       </ul>
     </div>

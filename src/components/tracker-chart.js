@@ -24,12 +24,12 @@ export class TrackerChart extends React.Component {
     let findMax = [];
 
     let currentWeek = this.props.workouts.filter(workout => {
-      return workout.date >= moment().startOf('isoWeek').valueOf() && workout.date <= moment().endOf('isoWeek').valueOf() && workout.name === name;
+      return moment(workout.date).valueOf() >= moment().startOf('isoWeek').valueOf() && moment(workout.date).valueOf() <= moment().endOf('isoWeek').valueOf() && workout.name === name;
     })
 
     currentWeek.forEach(workout => {
-      currentWeightSeries.push([workout.date, workout.weight]);
-      currentRepSeries.push([workout.date, workout.reps]);
+      currentWeightSeries.push([moment(workout.date).valueOf(), workout.weight]);
+      currentRepSeries.push([moment(workout.date).valueOf(), workout.reps]);
       findMax.push(workout.weight, workout.reps);
     })
 
@@ -51,12 +51,12 @@ export class TrackerChart extends React.Component {
     let findMax = [];
 
     let lastSeven = this.props.workouts.filter(workout => {
-      return workout.name === this.state.title && workout.date >= moment().subtract(7, 'days').valueOf() && workout.date <= moment().valueOf()
+      return workout.name === this.state.title && moment(workout.date).valueOf() >= moment().subtract(7, 'days').valueOf() && moment(workout.date).valueOf() <= moment().valueOf()
     });
 
     lastSeven.forEach(workout => {
-      currentWeightSeries.push([workout.date, workout.weight]);
-      currentRepSeries.push([workout.date, workout.reps]);
+      currentWeightSeries.push([moment(workout.date).valueOf(), workout.weight]);
+      currentRepSeries.push([moment(workout.date).valueOf(), workout.reps]);
       findMax.push(workout.weight, workout.reps);
     });
 
@@ -78,12 +78,12 @@ export class TrackerChart extends React.Component {
     let findMax = [];
 
     let lastThirty = this.props.workouts.filter(workout => {
-      return workout.name === this.state.title && workout.date >= moment().subtract(30, 'days').valueOf() && workout.date <= moment().valueOf()
+      return workout.name === this.state.title && moment(workout.date).valueOf() >= moment().subtract(30, 'days').valueOf() && moment(workout.date).valueOf() <= moment().valueOf()
     });
 
     lastThirty.forEach(workout => {
-      currentWeightSeries.push([workout.date, workout.weight]);
-      currentRepSeries.push([workout.date, workout.reps]);
+      currentWeightSeries.push([moment(workout.date).valueOf(), workout.weight]);
+      currentRepSeries.push([moment(workout.date).valueOf(), workout.reps]);
       findMax.push(workout.weight, workout.reps);
     });
 
@@ -192,7 +192,7 @@ export class TrackerChart extends React.Component {
     this.props.workouts.forEach(workout => workoutNames.includes(workout.name) ? null : workoutNames.push(workout.name));
 
     let lastThirty = this.props.workouts.filter(workout => {
-      return workout.name === this.state.title && workout.date >= moment().subtract(30, 'days').valueOf() && workout.date <= moment().valueOf()
+      return workout.name === this.state.title && moment(workout.date).valueOf() >= moment().subtract(30, 'days').valueOf() && moment(workout.date).valueOf() <= moment().valueOf()
     });
 
     let lastThirtyButton = lastThirty.length >= 9 ? <button className="filter-button" onClick={() => this.toLastThirty()}>View Last 30 Days</button> : null;
