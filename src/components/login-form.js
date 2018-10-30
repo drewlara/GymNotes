@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import { Link } from 'react-router-dom';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
@@ -20,6 +21,7 @@ export class LoginForm extends React.Component {
     }
     return (
       <div className="login-form-wrapper">
+        <h1>Login</h1>
         <form
           className="login-form"
           onSubmit={this.props.handleSubmit(values =>
@@ -52,6 +54,7 @@ export class LoginForm extends React.Component {
           </button>
           </div>
         </form>
+        <span className="to-register">Don't have a GymNotes Account? <Link to={'/register'}>Sign Up!</Link></span>
       </div>
       );
   }

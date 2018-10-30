@@ -52,3 +52,19 @@
 .to-register a:visited{
   color: rgb(48, 134, 174);
 }
+
+.form-error {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .login-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .login-form-group {
+    padding: 0;
+  }
+}

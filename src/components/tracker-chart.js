@@ -200,21 +200,40 @@ export class TrackerChart extends React.Component {
     let toCurrentButton = this.state.title !== '' ? <button className="filter-button" onClick={() => this.toCurrent(this.state.title)}>View Current Week</button> : null;
 
     return (
-      <div className="tracker-chart">
-        <div className="tracker-select">
-          <TrackerSelect options={workoutNames.sort()} onChange={name => this.toCurrent(name)} />
+      <div className="tracker-chart-wrapper">
+        <div className="tracker-chart">
+          <div className="tracker-select">
+            <TrackerSelect options={workoutNames.sort()} onChange={name => this.toCurrent(name)} />
+          </div>
+          <Chart 
+            options={options}
+            series={series}
+            type="line"
+            width="400"
+            height="400"
+          />
+          <div className="filters">
+            {toCurrentButton}
+            {lastSevenButton}
+            {lastThirtyButton}
+          </div>
         </div>
-        <Chart 
-          options={options}
-          series={series}
-          type="line"
-          width="400"
-          height="400"
-        />
-        <div className="filters">
-          {toCurrentButton}
-          {lastSevenButton}
-          {lastThirtyButton}
+        <div className="tracker-chart-resp">
+          <div className="tracker-select">
+            <TrackerSelect options={workoutNames.sort()} onChange={name => this.toCurrent(name)} />
+          </div>
+          <Chart 
+            options={options}
+            series={series}
+            type="line"
+            width="750"
+            height="500"
+          />
+          <div className="filters">
+            {toCurrentButton}
+            {lastSevenButton}
+            {lastThirtyButton}
+          </div>
         </div>
       </div>
     )

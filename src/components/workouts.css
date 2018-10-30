@@ -60,3 +60,23 @@
 .workout-view:visited {
   color: rgb(48, 134, 174);
 }
+
+@media (min-width: 1024px) {
+  .workouts {
+    margin: 0 auto;
+    max-width: 95%;
+  }
+
+  .workout-list h2 {
+    font-size: 1.5em;
+  }
+  
+  .workout-list li {
+    font-size: 1.2em
+  }
+
+  .workout-list li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

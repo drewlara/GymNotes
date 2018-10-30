@@ -53,12 +53,14 @@ export class Dashboard extends React.Component {
     }
 
     return (
-      <div className="dashboard">
+      <div className="dashboard-wrapper">
         <h1>Dashboard</h1>
-        {display}
-        <div className="dash-current">
-          {currentWorkoutTitle}
-          {dashCurrentDisplay}
+        <div className="dashboard">
+          {display}
+          <div className="dash-current">
+            {currentWorkoutTitle}
+            {dashCurrentDisplay}
+          </div>
         </div>
       </div>
     )

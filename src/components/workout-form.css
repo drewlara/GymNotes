@@ -87,7 +87,7 @@
   color: rgb(51, 51 ,51);
 }
 
-.back-link-wrapper span:hover {
+.back-link-wrapper a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -95,4 +95,20 @@
 .form-error {
   margin-top: 10px;
   color: #721c24;
+}
+
+@media (min-width: 1024px) {
+  .workout-form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .workout-form {
+    width: 500px;
+  }
+
+  .form-group {
+    padding: 0;
+  }
 }

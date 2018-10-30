@@ -26,6 +26,7 @@ class WorkoutForm extends React.Component {
         );
       }
     return (
+      <div className="workout-form-wrapper">
       <div className="workout-form">
         <h1 className="workout-form-title">Add a workout</h1>
         {errorMessage}
@@ -61,6 +62,7 @@ class WorkoutForm extends React.Component {
         <div className="back-link-wrapper">
           <Link className="back-link" to="/workouts">Back to workouts</Link>
         </div>
+      </div>
       </div>
     )
   }

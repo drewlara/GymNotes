@@ -13,8 +13,8 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .08);
   text-align: center;
   padding: 0;
-  width: 350px;
-  height: 500px;
+  height: 450px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 0 1px rgba(0, 0, 0, .08);
   text-align: center;
   padding: 0 10px 20px 10px;
-  width: 350px;
+  max-width: 900px;
   margin: 30px auto;
 }
 
@@ -92,4 +92,66 @@
 
 .dash-workout-list a:visited {
   color: rgb(48, 134, 174);
+}
+
+.chart-wrapper .apexcharts-canvas {
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-wrapper h1 {
+    text-align: center;
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    padding: 20px 30px 20px 30px;
+    align-items: center;
+    grid-auto-rows: 550px;
+  }
+
+  .dash-display {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .dash-display h2 {
+    font-size: 2em;
+  }
+
+  .breakdown-options {
+    font-size: 1.25em;
+  }
+
+  .dash-current {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  .dash-current h2 {
+    font-size: 2em;
+  }
+
+  .dash-workout-list h3 {
+    font-size: 1.2em;
+  }
+
+  .dash-workout-list li {
+    font-size: 1.15em
+  }
+
+  .dash-workout-list li a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .chart-wrapper .apexcharts-canvas {
+    margin: 0 auto;
+  }
 }

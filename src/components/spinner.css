@@ -48,3 +48,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media (min-width: 1024px) {
+  .ring-wrapper {
+    max-width: 100%;
+  }
+}

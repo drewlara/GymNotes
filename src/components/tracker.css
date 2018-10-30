@@ -5,6 +5,7 @@
 .tracker-select {
   padding-right: 15px;
   padding-left: 15px;
+  margin: 0 auto;
 }
 
 .filters {
@@ -20,4 +21,37 @@
   color: #fff;
   border-radius: 4px;
   margin-bottom: 15px;
+}
+
+.tracker-chart-resp {
+  display: none;
+}
+
+.tracker-chart .apexcharts-canvas {
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .tracker-chart {
+    display: none;
+  }
+
+  .tracker-chart-resp {
+    display: block;
+  }
+
+  .tracker-chart-resp .apexcharts-canvas {
+    margin: 0 auto;
+  }
+
+  .tracker-select {
+    width: 750px;
+    margin: 0 auto;
+  }
+
+  .filter-button {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+  }
 }

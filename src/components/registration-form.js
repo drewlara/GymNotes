@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import { Link } from 'react-router-dom';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
@@ -19,6 +20,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <div className="registration-form-wrapper">
+                <h1>Sign Up</h1>
                 <form
                     className="registration-form"
                     onSubmit={this.props.handleSubmit(values =>
@@ -67,6 +69,7 @@ export class RegistrationForm extends React.Component {
                     </button>
                     </div>
                 </form>
+                <span className="to-login">Already have a GymNotes account? <Link to={'/login'}>Login!</Link></span>
             </div>
         );
     }

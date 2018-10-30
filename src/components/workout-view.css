@@ -16,3 +16,9 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media (min-width: 1024px){
+  .workout-view-page {
+    min-width: 900px;
+  }
+}
