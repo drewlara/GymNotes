@@ -124,10 +124,10 @@ export class BreakdownChart extends React.Component {
         title: {
           text: this.state.title,
             align: 'center',
-            margin: 0,
+            margin: 10,
             offsetX: 0,
             offsetY: 0,
-            floating: true,
+            floating: false,
             style: {
               fontSize:  '20px',
               color:  'rgb(51, 51, 51)'
