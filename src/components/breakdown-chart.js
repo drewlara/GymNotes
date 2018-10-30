@@ -137,7 +137,7 @@ export class BreakdownChart extends React.Component {
         labels={chartData.labels}
         type="donut"
         width="350"
-        height="350"
+        height="400"
       />
       {breakdownOptions}
       </div>
