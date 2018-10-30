@@ -121,11 +121,26 @@ export class BreakdownChart extends React.Component {
       options: {
         height: '100%',
         labels: this.state.workoutLabels,
+        title: {
+          text: this.state.title,
+            align: 'center',
+            margin: 0,
+            offsetX: 0,
+            offsetY: 0,
+            floating: true,
+            style: {
+              fontSize:  '20px',
+              color:  'rgb(51, 51, 51)'
+            }
+        },
         legend: {
-          position: 'top'
+          position: 'bottom',
+          containerMargin: {
+            //...
+          }
         },
         chart: {
-          background: '#ccc'
+          background: '#fff'
         },
       },
       series: this.state.workoutTypes
