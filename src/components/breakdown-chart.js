@@ -136,7 +136,7 @@ export class BreakdownChart extends React.Component {
         legend: {
           position: 'bottom',
           containerMargin: {
-            top: 0
+            top: 5
           }
         },
         chart: {
