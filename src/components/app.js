@@ -111,7 +111,8 @@ export class App extends React.Component {
 const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
   loggedIn: state.auth.currentUser !== null,
-  loading: state.app.loading
+  loading: state.app.loading,
+  error: state.app.error
 });
 
 export default connect(mapStateToProps)(App);

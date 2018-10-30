@@ -34,7 +34,7 @@ export default (state=initialState, action) => {
     });
   }
   else if (action.type === WORKOUT_API_ERROR){
-    console.log(action.error);
+    window.alert('Internal Server Error');
     return Object.assign({}, state, {
       loading: false,
       error: action.error
