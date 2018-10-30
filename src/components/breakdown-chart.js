@@ -119,9 +119,13 @@ export class BreakdownChart extends React.Component {
   render() {
     let chartData = {
       options: {
+        height: '100%',
         labels: this.state.workoutLabels,
         legend: {
           position: 'bottom'
+        },
+        chart: {
+          background: '#ccc'
         }
       },
       series: this.state.workoutTypes
@@ -137,7 +141,7 @@ export class BreakdownChart extends React.Component {
         labels={chartData.labels}
         type="donut"
         width="350"
-        height="400"
+        //height="100%"
       />
       {breakdownOptions}
       </div>
