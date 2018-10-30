@@ -124,7 +124,7 @@ export class BreakdownChart extends React.Component {
         title: {
           text: this.state.title,
             align: 'center',
-            margin: 10,
+            margin: 20,
             offsetX: 0,
             offsetY: 0,
             floating: false,
@@ -136,7 +136,7 @@ export class BreakdownChart extends React.Component {
         legend: {
           position: 'bottom',
           containerMargin: {
-            //...
+            top: 0
           }
         },
         chart: {
