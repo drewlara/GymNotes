@@ -209,7 +209,7 @@ export class TrackerChart extends React.Component {
             options={options}
             series={series}
             type="line"
-            width="400"
+            width="375"
             height="400"
           />
           <div className="filters">
@@ -226,7 +226,7 @@ export class TrackerChart extends React.Component {
             options={options}
             series={series}
             type="line"
-            width="750"
+            width="725"
             height="500"
           />
           <div className="filters">

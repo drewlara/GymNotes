@@ -55,3 +55,13 @@
     width: 500px;
   }
 }
+
+@media (min-width: 768px) {
+  .tracker-chart {
+    display: none;
+  }
+
+  .tracker-chart-resp {
+    display: block;
+  }
+}

@@ -155,7 +155,7 @@ export class BreakdownChart extends React.Component {
         series={chartData.series}
         labels={chartData.labels}
         type="donut"
-        width="350"
+        width="300"
       />
       {breakdownOptions}
       </div>

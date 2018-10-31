@@ -27,8 +27,9 @@ export class WorkoutEditForm extends React.Component {
         );
       }
     return ( 
+      <div className="workout-form-wrapper">
       <div className="workout-form">
-        <h1 className="workout-form-title">Add a workout</h1>
+        <h1 className="workout-form-title">Edit workout</h1>
         {errorMessage}
         <form name="edit-workout-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         <div className="form-group">
@@ -62,6 +63,7 @@ export class WorkoutEditForm extends React.Component {
         <div className="back-link-wrapper">
           <span onClick={() => this.props.history.goBack()}>Go Back</span>
         </div>
+      </div>
       </div>
     )
   }
