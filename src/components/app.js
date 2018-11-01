@@ -87,7 +87,7 @@ export class App extends React.Component {
       <Router>
         <div className="app">
           <NavBar sidebarHandler={this.siderbarClickHandler} />
-          <Sidebar open={this.state.sideBarOpen} />
+          <Sidebar open={this.state.sideBarOpen} clickHandler={this.siderbarClickHandler} />
           {backdrop}
           {spinner}
           <Switch>
