@@ -11,7 +11,6 @@ export default function DatePicker(props){
     <DateTimePicker 
       onChange={props.input.onChange}
       dropUp
-      //format="MM-DD-YYYY HH:mm:ss A"
       value={!props.input.value ? null : new Date(props.input.value)}
       time={false}
       parse={str => new Date(str)}

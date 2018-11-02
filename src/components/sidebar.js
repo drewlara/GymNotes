@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './sidebar.css';
 
-export function Siderbar(props) {
+export function Sidebar(props) {
   let barClass = props.open ? 'side-bar side-bar open' : 'side-bar';
   let title = props.loggedIn ? `Hi, ${props.currentUser.firstName}` : 'Welcome to GymNotes';
   let navLinks = props.loggedIn ? (
@@ -34,4 +34,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps)(Siderbar);
+export default connect(mapStateToProps)(Sidebar);

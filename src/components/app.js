@@ -24,7 +24,7 @@ export class App extends React.Component {
     this.state = {
       sideBarOpen: false
     }
-    this.siderbarClickHandler = this.siderbarClickHandler.bind(this);
+    this.sidebarClickHandler = this.sidebarClickHandler.bind(this);
     this.backdropClickHandler = this.backdropClickHandler.bind(this);
   }
 
@@ -59,7 +59,7 @@ export class App extends React.Component {
       clearInterval(this.refreshInterval);
   }
 
-  siderbarClickHandler() {
+  sidebarClickHandler() {
     this.setState({
       sideBarOpen: !this.state.sideBarOpen
     })
@@ -86,8 +86,8 @@ export class App extends React.Component {
     return (
       <Router>
         <div className="app">
-          <NavBar sidebarHandler={this.siderbarClickHandler} />
-          <Sidebar open={this.state.sideBarOpen} clickHandler={this.siderbarClickHandler} />
+          <NavBar sidebarHandler={this.sidebarClickHandler} />
+          <Sidebar open={this.state.sideBarOpen} clickHandler={this.sidebarClickHandler} />
           {backdrop}
           {spinner}
           <Switch>
