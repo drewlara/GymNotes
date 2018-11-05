@@ -1,7 +1,7 @@
 GymNotes [![Build Status](https://travis-ci.org/drewlara/GymNotes.svg?branch=master)](https://travis-ci.org/drewlara/GymNotes)
 ====
 
-A simple way to track and log any weightlifting workouts
+A simple way to track and log weightlifting workouts
 --------------------------------------
 
 ### [Live Link](https://gymnotes.herokuapp.com/) 
