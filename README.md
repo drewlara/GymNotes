@@ -13,7 +13,7 @@ GymNotes is a full-stack application that allows users to log, view, edit, and d
 
 Screenshots
 -----------
-![alt text](public/assets/GymNotes-Landing.jpg)
+![alt text](public/assets/GymNotes-Landing.jpg =200x400)
 ![alt text](public/assets/GymNotes-Dashboard.jpg)
 ![alt text](public/assets/GymNotes-BreakdownChart.jpg)
 ![alt text](public/assets/GymNotes-Workouts.jpg)
