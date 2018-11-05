@@ -1,0 +1,14 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+env:
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: JLqf1Vh2+7uyzyVPV1/0xsU09xXTkCMkebOViSeJMHh2UQexPTKE0ucgFPDzg60XAPSQ8mLBS/1ZKBZSargD+43VIirCLKzoUBieeqgUFrQyUrStKB9+O0BKPeR3L8uE+zYsjj+SEyQlWDnI4SSsVmIWFoLuaAlXqfB57whbqZl73Wed570o7gtmWSLqOofz5JVWg3PboKs5L+SDIy2u58k+y+hP7PU1zu73dFwZEnmZm/UV8b9/ea6xS7Mo0LM9D+GX60XT+24ww46eiIO61djlMekOR0ecNbtvEZKtWqc2DlE8kM/3S93kZ4bXnMMwRDuaWGwIsSvUmb6N98KrI2FyrqvuXnoO9XY3MRTI6gePDgDQtkJ5UCkYinhlYa6U15LDX92jzHAiL85PI5cxbGvVSxcsDvpn51rmMOf/of8Xq+5MQvfXAh45afP2286M0ugUzdpjzqEJ9JrOs1NdU0jN2vFroH44pdj4q9HKU1RARpSpF163slm2NQx1luwW5DQ8eaXZaj1tcfYMujDNHQLCEPkZLh6dVbsJsn0hQJQQyrDBe6BV0qLM4ajizRFe9Xtiedpi7PfWrif6qOVqoACJxggQtZ4ojEF7pem0MiRS04xsHn7x7PAVO2qgSkvrR0VtoA7aOnDo58LCT0MVlU/mkDbdacBA1FXnIGvnM+8=
+  app: gymnotes
+  on:
+    repo: drewlara/gymnotes-client
