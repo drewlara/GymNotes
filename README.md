@@ -13,12 +13,12 @@ GymNotes is a full-stack application that allows users to log, view, edit, and d
 
 Screenshots
 -----------
-![alt text](public/assets/screenshots/GymNotes-Landing.jpg)
-![alt text](public/assets/screenshots/GymNotes-Dashboard.jpg)
-![alt text](public/assets/screenshots/GymNotes-BreakdownChart.jpg)
-![alt text](public/assets/screenshots/GymNotes-Workouts.jpg)
-![alt text](public/assets/screenshots/GymNotes-AddWorkout.jpg)
-![alt text](public/assets/screenshots/GymNotes-TrackerChart.jpg)
+![alt text](public/assets/GymNotes-Landing.jpg)
+![alt text](public/assets/GymNotes-Dashboard.jpg)
+![alt text](public/assets/GymNotes-BreakdownChart.jpg)
+![alt text](public/assets/GymNotes-Workouts.jpg)
+![alt text](public/assets/GymNotes-AddWorkout.jpg)
+![alt text](public/assets/GymNotes-TrackerChart.jpg)
 
 # Technologies
 
