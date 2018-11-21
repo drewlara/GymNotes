@@ -5,6 +5,9 @@ A simple way to track and log weightlifting workouts
 --------------------------------------
 
 ### [Live Link](https://gymnotes.herokuapp.com/) 
+<strong>Demo The App</strong>
+* Username: demouser
+* Password: demouserpassword
 --------------------------------------------
 
 Summary
