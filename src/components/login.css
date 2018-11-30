@@ -57,6 +57,11 @@
   text-align: center;
 }
 
+.demo-show {
+  color: rgb(48, 134, 174);
+  cursor: pointer;
+}
+
 @media (min-width: 1024px) {
   .login-page {
     display: grid;
