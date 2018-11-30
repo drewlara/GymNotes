@@ -79,7 +79,7 @@ export class App extends React.Component {
       backdrop = <Backdrop show={this.backdropClickHandler} />
     }
     
-    if (this.props.loading) {
+    if (this.props.loading || this.props.authLoading) {
       spinner = <Spinner />
     }
 
@@ -112,7 +112,8 @@ const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
   loggedIn: state.auth.currentUser !== null,
   loading: state.app.loading,
-  error: state.app.error
+  error: state.app.error,
+  authLoading: state.auth.loading
 });
 
 export default connect(mapStateToProps)(App);
